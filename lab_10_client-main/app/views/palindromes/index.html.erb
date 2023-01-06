@@ -1,0 +1,13 @@
+<%= form_with url: "palindromes/result", data: {turbo: false, behavior: "autosave" }, method: :get do |form| %>
+    <%= number_field_tag :number,:required => true, class: 'form-control', id: 'number' %> <br/>
+
+    <%= form.radio_button :frmt, "html" %>
+    <%= form.label :frmt_html, "HTML" %>
+    <%= form.radio_button :frmt, "xml" %>
+    <%= form.label :frmt_xml, "XML" %>
+    <%= form.radio_button :frmt, "xslt" %>
+    <%= form.label :frmt_xml, "XSLT" %>
+    
+    <br>
+    <%= submit_tag("Найти", id: 'btn') %>
+<% end %>
